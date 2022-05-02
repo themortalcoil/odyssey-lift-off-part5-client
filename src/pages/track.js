@@ -5,28 +5,28 @@ import TrackDetail from '../components/track-detail';
 
 /** GET_TRACK gql query to retrieve a specific track by its ID */
 export const GET_TRACK = gql`
-  query getTrack($trackId: ID!) {
-    track(id: $trackId) {
-      id
-      title
-      author {
-        id
-        name
-        photo
-      }
-      thumbnail
-      length
-      modulesCount
-      numberOfViews
-      modules {
-        id
-        title
-        length
-      }
-      description
-    }
-  }
-`;
+	query getTrack($trackId: ID!) {
+		track(id: $trackId) {
+			id
+			title
+			author {
+				id
+				name
+				photo
+			}
+			thumbnail
+			durationInSeconds
+			modulesCount
+			numberOfViews
+			modules {
+				id
+				title
+				durationInSeconds
+			}
+			description
+		}
+	}
+`
 
 /**
  * Track Page fetches a track's data from the gql query GET_TRACK

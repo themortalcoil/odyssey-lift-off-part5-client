@@ -7,24 +7,24 @@ import { Layout, ModuleDetail, QueryResult } from '../components';
  * both needed for the ModuleDetail component
  */
 export const GET_MODULE_AND_PARENT_TRACK = gql`
-  query getModuleAndParentTrack($moduleId: ID!, $trackId: ID!) {
-    module(id: $moduleId) {
-      id
-      title
-      content
-      videoUrl
-    }
-    track(id: $trackId) {
-      id
-      title
-      modules {
-        id
-        title
-        length
-      }
-    }
-  }
-`;
+	query getModuleAndParentTrack($moduleId: ID!, $trackId: ID!) {
+		module(id: $moduleId) {
+			id
+			title
+			content
+			videoUrl
+		}
+		track(id: $trackId) {
+			id
+			title
+			modules {
+				id
+				title
+				durationInSeconds
+			}
+		}
+	}
+`
 
 /**
  * Module page fetches both parent track and module's data from the gql query GET_MODULE_AND_PARENT_TRACK

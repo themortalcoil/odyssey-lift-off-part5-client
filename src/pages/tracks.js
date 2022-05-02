@@ -5,20 +5,20 @@ import { Layout, QueryResult } from '../components';
 
 /** TRACKS gql query to retreive all tracks */
 export const TRACKS = gql`
-  query getTracks {
-    tracksForHome {
-      id
-      title
-      thumbnail
-      length
-      modulesCount
-      author {
-        name
-        photo
-      }
-    }
-  }
-`;
+	query getTracks {
+		tracksForHome {
+			id
+			title
+			thumbnail
+			durationInSeconds
+			modulesCount
+			author {
+				name
+				photo
+			}
+		}
+	}
+`
 
 /**
  * Tracks Page is the Catstronauts home page.
